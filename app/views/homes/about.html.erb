@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3 text-center bg-white rounded shadow p-3 my-5 pb-5">
+    <h1 class="my-3">-- Dress fun とは --</h1>
+    <p class="lh-lg">
+      "Dressfun"はオシャレを楽しみたい人向けのSNSです。<br />
+      <br />
+      多くのユーザーの投稿を見ることによって、<br />
+      <br />
+      あなたの普段のコーディネートを彩ってくれます。<br />
+      <br />
+      また、あなた自信がコーディネートを投稿できます。<br />
+      <br />
+      様々なシーンで活用でき、どんなときでも利用できます。<br />
+      <br />
+      ぜひご利用ください。
+    </p>
+    <div class="row">
+      <div class="col-md-3 offset-md-1 mt-3">
+        <%= link_to root_path do %>
+          <button type="button" class="btn btn-outline-secondary">TOPへ</button>
+        <% end %>
+      </div>
+      <div class="col-md-3 offset-md-0.5 mt-3">
+        <%= link_to new_user_registration_path do %>
+          <button type="button" class="btn btn-outline-primary">新規登録</button>
+        <% end %>
+      </div>
+      <div class="col-md-3 offset-md-0.5 mt-3">
+        <%= link_to new_user_session_path do %>
+          <button type="button" class="btn btn-outline-success">ログイン</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
