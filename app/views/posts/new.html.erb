@@ -1,30 +1,33 @@
 <div class="row">
-  <div class="col-md-5 mx-auto bg-white rounded shadow p-3 my-5 pb-5">
-    <h2><strong>新規投稿</strong></h2>
-    <%= form_with model: @post, local: true do %>
+  <div class="col-md-6 mx-auto bg-white rounded shadow p-3 my-5 pb-5">
+    <h2 class="text-center"><strong>新規投稿<i class="fas fa-pen-square" style="color: black;"></i></strong></h2>
+    <br />
+    <%= form_with model: @post, local: true do |f| %>
 
-      <div class="my-3 col-md-8 offset-md-2">
-        <label>投稿画像</label><br />
-        <%= f.attachment_field :post_image %>
+      <div class="my-3 col-md-9 offset-md-2">
+        <label>投稿画像<i class="far fa-images"></i></label><br />
+        <%= f.attachment_field :post_images_images, multiple: true %>
       </div>
 
-      <div class="my-3 col-md-8 offset-md-2">
+      <div class="my-3 col-md-9 offset-md-2">
         <label>投稿タイトル</label><br />
-        <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control" %>
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control", placeholder: "タイトルを入力してください" %>
       </div>
 
-      <div class="my-3 col-md-8 offset-md-2">
+      <div class="my-3 col-md-9 offset-md-2">
         <label>投稿内容</label><br />
-        <%= f.text_area :caption, autofocus: true, autocomplete: "caption", class: "form-control" %>
+        <p style="color: red;">※不適切な内容はお控えください</p>
+        <%= f.text_area :caption, autofocus: true, autocomplete: "caption", class: "form-control", placeholder: "最大文字数は150文字です" %>
       </div>
 
-      <div class="my-3 col-md-8 offset-md-2">
-        <label>使用されている色</label><br />
+      <div class="my-3 col-md-9 offset-md-2">
+        <label>使用されている色(主に使用されている色を記入してください)</label><br />
+        <p>(例:赤、黒など)</p>
         <%= f.text_field :color, autofocus: true, autocomplete: "color", class: "form-control" %>
       </div>
 
-      <%= f.submit "この内容で投稿", class: "btn btn-primary col-md-6 offset-md-3 my-3" %>
-      
+      <%= f.submit "この内容で投稿する", class: "btn btn-primary col-md-6 offset-md-3 my-3" %>
+
     <% end %>
   </div>
 </div>

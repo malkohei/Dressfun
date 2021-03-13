@@ -11,7 +11,7 @@ class User < ApplicationRecord
   enum sex: {男性:0, 女性:1}
 
   validates :name, presence: true
-  validates :nickname, presence: true
+  validates :nickname, presence: true, uniqueness: true, length: {maximum: 20}
 
 
 end
