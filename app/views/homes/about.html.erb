@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-6 offset-md-3 text-center bg-white rounded shadow p-3 my-5 pb-5">
     <h1 class="my-3">-- Dress fun とは --</h1>
+    <br />
     <p class="lh-lg">
       "Dressfun"はオシャレを楽しみたい人向けのSNSです。<br />
       <br />
@@ -14,22 +15,31 @@
       <br />
       ぜひご利用ください。
     </p>
-    <div class="row">
-      <div class="col-md-3 offset-md-1 mt-3">
+    <br />
+
+    <% if user_signed_in? %>
+      <div class="col-md-10 offset-md-1 mt-3">
+        <%= link_to :back do %>
+          <button type="button" class="btn btn-outline-secondary col-md-8">戻る <i class="fas fa-undo-alt"></i></button>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="col-md-10 offset-md-1 mt-3">
         <%= link_to root_path do %>
-          <button type="button" class="btn btn-outline-secondary">TOPへ</button>
+          <button type="button" class="btn btn-outline-secondary col-md-8">TOPへ <i class="fas fa-home"></i></button>
         <% end %>
       </div>
-      <div class="col-md-3 offset-md-0.5 mt-3">
+      <div class="col-md-10 offset-md-1 mt-3">
         <%= link_to new_user_registration_path do %>
-          <button type="button" class="btn btn-outline-primary">新規登録</button>
+          <button type="button" class="btn btn-outline-primary col-md-8">新規登録へ <i class="fas fa-user-plus"></i></button>
         <% end %>
       </div>
-      <div class="col-md-3 offset-md-0.5 mt-3">
+      <div class="col-md-10 offset-md-1 mt-3">
         <%= link_to new_user_session_path do %>
-          <button type="button" class="btn btn-outline-success">ログイン</button>
+          <button type="button" class="btn btn-outline-success col-md-8">ログインへ <i class="fas fa-sign-in-alt"></i></button>
         <% end %>
       </div>
-    </div>
+    <% end %>
+
   </div>
 </div>

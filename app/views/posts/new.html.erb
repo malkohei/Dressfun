@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-5 mx-auto bg-white rounded shadow p-3 my-5 pb-5">
+    <h2><strong>新規投稿</strong></h2>
+    <%= form_with model: @post, local: true do %>
+
+      <div class="my-3 col-md-8 offset-md-2">
+        <label>投稿画像</label><br />
+        <%= f.attachment_field :post_image %>
+      </div>
+
+      <div class="my-3 col-md-8 offset-md-2">
+        <label>投稿タイトル</label><br />
+        <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control" %>
+      </div>
+
+      <div class="my-3 col-md-8 offset-md-2">
+        <label>投稿内容</label><br />
+        <%= f.text_area :caption, autofocus: true, autocomplete: "caption", class: "form-control" %>
+      </div>
+
+      <div class="my-3 col-md-8 offset-md-2">
+        <label>使用されている色</label><br />
+        <%= f.text_field :color, autofocus: true, autocomplete: "color", class: "form-control" %>
+      </div>
+
+      <%= f.submit "この内容で投稿", class: "btn btn-primary col-md-6 offset-md-3 my-3" %>
+      
+    <% end %>
+  </div>
+</div>

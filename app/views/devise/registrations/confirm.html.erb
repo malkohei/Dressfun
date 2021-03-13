@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6 mx-auto bg-white rounded shadow p-3 my-5 pb-5">
+    <h3 class="text-center text-decoration-underline">以下の情報で新規登録します。よろしいですか？</h3>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <table class="table table-borderless my-5 offset-1">
+        <tr>
+          <td>名前(フルネーム)</td>
+          <td><%= f.text_field :name, value: @user.name, readonly: true %></td>
+        </tr>
+        <tr>
+          <td>ユーザーネーム</td>
+          <td><%= f.text_field :nickname, value: @user.nickname, readonly: true %></td>
+        </tr>
+        <tr>
+          <td>性別</td>
+          <td><%= f.text_field :sex, value: @user.sex, readonly: true %></td>
+        </tr>
+        <tr>
+          <td>メールアドレス</td>
+          <td><%= f.text_field :email, value: @user.email, readonly: true %></td>
+        </tr>
+        <tr>
+          <td>パスワード</td>
+          <td><%= f.text_field :password, value: @user.password, readonly: true %></td>
+        </tr>
+      </table>
+
+        <%= f.submit "修正する︎︎", name: :back, class: "btn btn-secondary col-md-8 offset-md-2 mb-2" %>
+        <%= f.submit "登録する✔︎", class: "btn btn-primary col-md-8 offset-md-2" %>
+    <% end %>
+  </div>
+</div>
