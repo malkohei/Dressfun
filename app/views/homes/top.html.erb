@@ -1,17 +1,25 @@
-<div class="row">
+<div class="row my-5">
     <div class="col-md-6 offset-md-3 text-center my-5 rounded mh-100">
       <h1 class="my-3">-- ようこそ <strong>Dress<%= image_tag('icon.png') %>fun</strong> へ --</h1><br />
       <p class="text-decoration-underline">
         ここは様々なコーディネートを思ったままに投稿できるSNSです。<br />
         他のユーザーの投稿を見て楽しむこともできます。
       </p>
-      <h3 class="my-5">ログインは <%= link_to "こちら", new_user_session_path %> から</h3><br />
-      <h4>まだ登録されていない方</h4>
+      <% if user_signed_in? %>
+        <h3 class="my-5">ログインは <%= link_to "こちら", posts_path, class: "link-success" %> から</h3><br />
+        <h4>まだ登録されていない方</h4>
+        <%= link_to posts_path do %>
+          <button type="button" class="btn btn-outline-primary btn-lg my-5 shadow p-3">はじめる<i class="fas fa-user-plus"></i></button>
+        <% end %>
+      <% else %>
+        <h3 class="my-5">ログインは <%= link_to "こちら", new_user_session_path, class: "link-success" %> から</h3><br />
+        <h4>まだ登録されていない方</h4>
         <%= link_to new_user_registration_path do %>
           <button type="button" class="btn btn-outline-primary btn-lg my-5 shadow p-3">はじめる<i class="fas fa-user-plus"></i></button>
         <% end %>
+      <% end %>
     </div>
-  </div>
+
     <div class="col-md-3 offset-md-10">
       <%= link_to about_path do %>
         <button type="button" class="btn btn-outline-secondary btn-sm mb-3">Dressfun とは?</button>

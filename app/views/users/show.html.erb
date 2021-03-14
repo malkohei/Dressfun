@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row my-5">
   <div class="col-md-5 mx-auto bg-white rounded shadow p-3 my-5 pb-5">
     <h2 class="text-center"><strong>ユーザー詳細<i class="fas fa-portrait" style="color: black; font-size: 30px;"></i></strong></h2>
 
@@ -17,12 +17,14 @@
       </tr>
     </table>
 
-    <%= link_to edit_user_path(@user) do %>
-      <button type="button" class="btn btn-success col-md-5 offset-md-3 my-3 shadow">編集する</button>
-    <% end %>
-    <br />
-    <%= link_to destroy_user_session_path, method: :delete do %>
-      <button type="button" class="btn btn-danger col-md-5 offset-md-3 shadow">ログアウトする</button>
+    <% if @user == current_user %>
+      <%= link_to edit_user_path(@user) do %>
+        <button type="button" class="btn btn-success col-md-5 offset-md-3 my-3 shadow"><i class="fas fa-user-edit"></i></button>
+      <% end %>
+      <br />
+      <%= link_to destroy_user_session_path, method: :delete, "data-confirm" => "このアカウントをログアウトしますか?", class:"text-white" do %>
+        <button type="button" class="btn btn-danger col-md-5 offset-md-3 shadow"><i class="fas fa-sign-out-alt"></i></button>
+      <% end %>
     <% end %>
   </div>
 </div>

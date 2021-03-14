@@ -3,11 +3,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.post_images.build
+    @post.post_images.new
   end
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       flash[:success] = "投稿に成功しました"
       redirect_to posts_path
@@ -18,9 +19,12 @@ class PostsController < ApplicationController
   end
 
   def index
+    @posts = Post.all
   end
 
   def show
+    @post = Post.find(params[:id])
+    @user = @post.user
   end
 
   def edit
@@ -30,6 +34,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
