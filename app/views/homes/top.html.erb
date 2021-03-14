@@ -6,7 +6,7 @@
         他のユーザーの投稿を見て楽しむこともできます。
       </p>
       <% if user_signed_in? %>
-        <h3 class="my-5">ログインは <%= link_to "こちら", posts_path, class: "link-success" %> から</h3><br />
+        <h3 class="my-5">ログインは <%= link_to "こちら", posts_path %> から</h3><br />
         <h4>まだ登録されていない方</h4>
         <%= link_to posts_path do %>
           <button type="button" class="btn btn-outline-primary btn-lg my-5 shadow p-3">はじめる<i class="fas fa-user-plus"></i></button>

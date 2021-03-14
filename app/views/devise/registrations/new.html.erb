@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row my-5">
   <div class="col-md-6 mx-auto bg-white rounded shadow p-3 my-5 pb-5">
     <h2><strong>新規登録ページ</strong><i class="fas fa-user-plus" style="color: black; font-size: 27px;"></i></h2>
 
@@ -23,13 +23,13 @@
 
       <div class="my-3 col-md-8 offset-md-2">
         <label>メールアドレス</label><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "example@example.email" %>
       </div>
 
       <div class="my-3 col-md-8 offset-md-2">
         <label>パスワード</label>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <em>(英数字含む <%= @minimum_password_length %> 文字以上)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
       </div>
