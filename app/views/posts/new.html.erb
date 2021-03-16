@@ -5,17 +5,17 @@
     <%= form_with model: @post, local: true do |f| %>
 
       <div class="my-3 col-md-9 offset-md-2">
-        <label>投稿画像<i class="far fa-images"></i></label><br />
+        <strong><label>投稿画像<i class="far fa-images"></i></label></strong><br />
         <%= f.attachment_field :post_images_images, multiple: true %>
       </div>
 
       <div class="my-3 col-md-9 offset-md-2">
-        <label>投稿タイトル</label><br />
+        <strong><label>投稿タイトル</label></strong><br />
         <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control", placeholder: "タイトルを入力してください" %>
       </div>
 
       <div class="my-3 col-md-9 offset-md-2">
-        <label>投稿内容</label><br />
+        <strong><label>投稿内容</label></strong><br />
         <p style="color: red;">※不適切な内容はお控えください</p>
         <%= f.text_area :caption, autofocus: true, autocomplete: "caption", class: "form-control", placeholder: "最大文字数は150文字です" %>
       </div>
