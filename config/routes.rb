@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
 
   resources :posts do
+    resource :likes, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
     collection do
       get 'search'
     end

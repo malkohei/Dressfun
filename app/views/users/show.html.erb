@@ -3,17 +3,15 @@
     <h2 class="text-center"><strong>ユーザー詳細<i class="fas fa-portrait" style="color: black; font-size: 30px;"></i></strong></h2>
 
     <div class="offset-md-4">
-      <%= attachment_image_tag @user,:user_image, :fill, 150, 150, format: 'jpeg', fallback: "user_icon2.png", size: '150x150', class: "mt-4 rounded-circle" %>
+      <%= attachment_image_tag @user,:user_image, :fill, 150, 150, format: 'jpeg', fallback: "user_icon2.png", size: '150x150', class: "mt-4 rounded-circle mx-auto" %>
     </div>
 
-    <table class="table table-borderless my-4 col-md-9 offset-md-2">
+    <table class="table table-borderless my-4 col-md-9 mx-auto">
       <tr>
-        <td>ユーザー</td>
-        <td><strong><%= @user.nickname %></strong></td>
+        <td class="text-center" style="font-size: 30px;"><strong><%= @user.nickname %></strong></td>
       </tr>
       <tr>
-        <td>紹介文</td>
-        <td><%= @user.introduction %></td>
+        <td class="text-center"><%= @user.introduction %></td>
       </tr>
     </table>
 

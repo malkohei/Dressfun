@@ -3,7 +3,7 @@
     <div class="row">
       <div class="offset-md-1 mt-2">
         <%= link_to user_path(@post.user) do %>
-          <%= attachment_image_tag @post.user, :user_image, :fill, 60, 60, format: 'jpeg', fallback: "user_icon_png", size: '60x60', class: "mt-1 rounded-circle" %>
+          <%= attachment_image_tag @post.user, :user_image, :fill, 60, 60, format: 'jpeg', fallback: "user_icon2.png", size: '60x60', class: "mt-1 rounded-circle" %>
           <strong class="my-auto mx-4" style="color: black; font-size: 20px;"><%= @post.user.nickname %></strong>
         <% end %>
         <label class="my-auto mx-2"><%= @post.created_at.strftime('%Y/%m/%d') %></label>
@@ -20,23 +20,62 @@
         <% end %>
       </div>
     </div>
-      <div class="post_image my-4">
-        <% if @post.post_images.present? %>
-          <% @post.post_images.each do |post_image| %>
-            <div>
-              <%= attachment_image_tag post_image, :image, size: "700x500", class: "mx-auto border border-3 my-auto" %>
-            </div>
-          <% end %>
+    <div class="post_image my-4">
+      <% if @post.post_images.present? %>
+        <% @post.post_images.each do |post_image| %>
+          <div>
+            <%= attachment_image_tag post_image, :image, size: "700x500", class: "mx-auto border border-3 my-auto" %>
+          </div>
         <% end %>
+      <% end %>
+    </div>
+
+    <div class="offset-md-9" id="like-<%= @post.id %>">
+      <%= render partial: 'likes/like', locals: { post: @post} %>
+    </div>
+
+    <div class="col-md-4 my-5 offset-md-2">
+      <h4><strong style="color: black;"><%= @post.title %></strong></h4>
+    </div>
+    <div class="col-md-8 offset-md-2 my-5">
+      <h4><%= @post.caption %></h4>
+    </div>
+    <div class="col-md-4 offset-md-2 my-5">
+      <h4><%= @post.color %></h4>
+    </div>
+
+    <div class="col-md-8 offset-md-2">
+      <p>コメント(<%= @post.post_comments.count %>)</p>
+      <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
+        <table class="table">
+          <tr>
+            <td>
+              <%= f.text_area :comment, rows: '1', placeholder: "コメントを入力", class: "col-md-12 form-control rounded-pill offset-md-2" %>
+            </td>
+            <td>
+              <%= f.submit "送信する", class: "btn btn-primary rounded-pill offset-md-3" %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+
+    <% @post.post_comments.each do |post_comment| %>
+      <div class="col-md-8 offset-md-2">
+        <p>
+          <%= link_to user_path(post_comment.user) do %>
+            <%= attachment_image_tag post_comment.user, :user_image, :fill, 25, 25, format: 'jpeg', fallback: "user_icon2.png", size: '40x40', class: "mt-1 rounded-circle mx-3" %>
+            <label class="mx-3"><strong><%= post_comment.user.nickname %></strong></label>
+          <% end %>
+          <label class="mx-3"><%= post_comment.created_at.strftime('%Y/%m/%d') %></label>
+          <% if post_comment.user == current_user %>
+            <%= link_to post_post_comment_path(post_comment.post, post_comment), method: :delete, "data-confirm" => "このコメントを削除しますか?", class:"text-white" do %>
+              <i class="fas fa-trash" style="color: black;"></i>
+            <% end %>
+          <% end %>
+        </p>
+        <p class="my-3 offset-md-1"><%= post_comment.comment %></p>
       </div>
-      <div class="col-md-4 my-5 offset-md-2">
-        <h4><strong style="color: black;"><%= @post.title %></strong></h4>
-      </div>
-      <div class="col-md-8 offset-md-2 my-5">
-        <h4><%= @post.caption %></h4>
-      </div>
-      <div class="col-md-4 offset-md-2 my-5">
-        <h4><%= @post.color %></h4>
-      </div>
+    <% end %>
   </div>
 </div>

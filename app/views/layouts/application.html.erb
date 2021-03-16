@@ -19,17 +19,17 @@
           <%= search_form_for @q, url: search_posts_path do |f| %>
             <div class="row offset-md-4">
               <div class="col-md-10">
-                <%= f.search_field :title_or_caption_or_color_cont, class: "form-control col-auto", placeholder: 'キーワードを入力してください' %>
+                <%= f.search_field :title_or_caption_or_color_cont, class: "form-control rounded-pill", placeholder: 'キーワードを入力してください' %>
               </div>
               <div class="col-md-2">
-                <%= f.submit "Search", class: "btn btn-success" %>
+                <%= f.submit "Search", class: "btn btn-success rounded-pill" %>
               </div>
             </div>
           <% end %>
           <ul class="navbar-nav nav justify-content-end">
             <li class="nav-item mx-3">
               <%= link_to new_post_path do %>
-                <i class="fas fa-plus-square btn" style="color: white; font-size: 27px;"></i>
+                <i class="fas fa-plus-square btn" style="color: white; font-size: 35px;"></i>
               <% end %>
             </li>
             <li class="nav-item mx-3">
@@ -42,26 +42,26 @@
             </li>
             <li class="nav-item mx-4 my-auto">
               <%= link_to about_path do %>
-                <i class="fas fa-question-circle" style="color: white; font-size: 27px;"></i>
+                <i class="fas fa-question-circle" style="color: white; font-size: 35px;"></i>
               <% end %>
             </li>
           </ul>
         <% else %>
-          <a class="navbar-brand" href="/"><strong>Dress<%= image_tag('icon2.png') %>fun</strong></a>
+          <a class="navbar-brand" href="/" style="font-size: 30px;"><strong>Dress<%= image_tag 'icon2.png', :size =>'30x30' %>fun</strong></a>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-3">
               <%= link_to new_user_registration_path do %>
-                <i class="fas fa-user-plus btn" style="color: white; font-size: 27px;"></i>
+                <i class="fas fa-user-plus btn" style="color: white; font-size: 35px;"></i>
               <% end %>
             </li>
             <li class="nav-item mx-3">
               <%= link_to new_user_session_path do %>
-                <i class="fas fa-sign-in-alt btn" style="color: white; font-size: 27px;"></i>
+                <i class="fas fa-sign-in-alt btn" style="color: white; font-size: 35px;"></i>
               <% end %>
             </li>
             <li class="nav-item mx-4 my-auto">
               <%= link_to about_path do %>
-                <i class="fas fa-question-circle" style="color: white; font-size: 27px;"></i>
+                <i class="fas fa-question-circle" style="color: white; font-size: 35px;"></i>
               <% end %>
             </li>
           </ul>
