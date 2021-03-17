@@ -54,8 +54,11 @@
                     <span class="dropdown-item">マイページ</span>
                   <% end %>
                 </li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <%= link_to favorite_posts_path do %>
+                    <span class="dropdown-item">お気に入り</span>
+                  <% end %>
+                </li>
               </ul>
             </li>
           </ul>

@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   resources :posts do
     resource :likes, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
     collection do
       get 'search'
+      get 'favorite'
     end
   end
 

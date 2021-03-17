@@ -49,6 +49,11 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def favorite
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    @favorites = Post.find(favorites)
+  end
+
   private
 
   def post_params

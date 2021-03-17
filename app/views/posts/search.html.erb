@@ -1,35 +1,5 @@
 <div class="container my-5">
   <% @results.each do |post| %><br />
-    <div class="col-md-7 mx-auto bg-white rounded shadow p-3 my-4 pb-5">
-      <div class="row offset-md-1">
-        <%= link_to user_path(post.user) do %>
-          <%= attachment_image_tag post.user, :user_image, :fill, 50, 50, format: 'jpeg', fallback: "user_icon_png", size: '50x50', class: "mt-1 rounded-circle" %>
-          <strong class="my-auto mx-4" style="color: black;"><%= post.user.nickname %></strong>
-        <% end %>
-        <label class="my-auto mx-2"><%= post.created_at.strftime('%Y/%m/%d') %></label>
-      </div>
-      <div class="post_image my-4">
-        <% if post.post_images.present? %>
-          <% post.post_images.each do |post_image| %>
-            <div>
-              <%= attachment_image_tag post_image, :image, size: "500x350", class: "mx-auto border border-3 my-auto" %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="col-md-4 my-3 offset-md-2">
-        <%= link_to post_path(post) do %>
-          <strong style="color: black;"><%= post.title %></strong>
-        <% end %>
-      </div>
-      <div class="col-md-8 offset-md-2 my-3">
-        <%= post.caption %>
-      </div>
-      <div class="col-md-4 offset-md-2 my-3">
-        <%= post.color %>
-      </div>
-
-
-    </div>
+    <%= render 'posts/post', post: post %>
   <% end %>
 </div>

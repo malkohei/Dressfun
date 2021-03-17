@@ -30,8 +30,13 @@
       <% end %>
     </div>
 
-    <div class="offset-md-9" id="like-<%= @post.id %>">
-      <%= render partial: 'likes/like', locals: { post: @post} %>
+    <div class="d-flex justify-content-end" style="margin-right: 200px;">
+      <div style="margin-right: 40px;" id="like-<%= @post.id %>">
+        <%= render partial: 'likes/like', locals: {post: @post} %>
+      </div>
+      <div id="favorite-<%= @post.id %>">
+        <%= render partial: 'favorites/favorite', locals: {post: @post} %>
+      </div>
     </div>
 
     <div class="col-md-4 my-5 offset-md-2">

@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <% if post.favorited_by?(current_user) %>
+    <%= link_to post_favorites_path(post), method: :DELETE, remote: true do %>
+      <i class="fas fa-bookmark" style="color: #ffc107; font-size: 30px;"></i>
+    <% end %>
+  <% else %>
+    <%= link_to post_favorites_path(post), method: :POST, remote: true do %>
+      <i class="far fa-bookmark" style="color: black; font-size: 30px;"></i>
+    <% end %>
+  <% end %>
+<% end %>
