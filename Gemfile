@@ -78,7 +78,3 @@ group :production, :test do
   gem 'pry-rails'
 end
 
-gem 'dotenv-rails'
-group :production do
-  gem 'mysql2'
-end
