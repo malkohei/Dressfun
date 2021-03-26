@@ -4,8 +4,9 @@
     <br />
     <%= form_with model: @post, local: true do |f| %>
 
-      <div class="my-3 col-md-9 offset-md-2">
+      <div class="my-3 col-md-8 offset-md-2">
         <strong><label>投稿画像<i class="far fa-images"></i></label></strong><br />
+        <p style="color : red;">(画像を複数アップロードする場合は、shift + クリックまたは ctrl + クリックで選択しアップロードしてください。)</p>
         <%= f.attachment_field :post_images_images, multiple: true %>
       </div>
 

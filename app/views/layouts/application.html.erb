@@ -84,7 +84,13 @@
         <% end %>
       </div>
     </header>
+
     <div class="container mw-100" style="background-color: #eee; height: auto;">
+      <% flash.each do |key, value| %>
+        <p class="alert alert-<%= key %>">
+          <%= value %>
+        </p>
+      <% end %>
       <%= yield %>
     </div>
   </body>

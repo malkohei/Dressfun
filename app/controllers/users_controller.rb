@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = "ユーザー情報を更新しました"
       redirect_to user_path(@user)
     else
-      flash[:notice] = "ユーザー情報の更新に失敗しました"
+      flash[:danger] = "ユーザー情報の更新に失敗しました"
       render 'edit'
     end
   end

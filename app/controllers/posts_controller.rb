@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       flash[:success] = "投稿に成功しました"
       redirect_to posts_path
     else
-      flash[:notice] = "投稿に失敗しました。内容を確認してください"
+      flash[:danger] = "投稿に失敗しました。内容を確認してください"
       render :new
     end
   end
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
       flash[:success] = "更新が完了しました"
       redirect_to post_path(@post)
     else
-      flash[:notice] = "更新に失敗しました、投稿内容を確認してください"
+      flash[:danger] = "更新に失敗しました、投稿内容を確認してください"
       render :edit
     end
   end
