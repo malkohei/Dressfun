@@ -1,24 +1,5 @@
-# README
+# Dressfun 概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Dressfunはオシャレを楽しみたい人専用のSNS型Webアプリケーションです。
+ユーザーは全身のコーディネートや部分的なアイテムの投稿をすることができます。
+他人の投稿にいいねやコメント投稿、お気に入りを登録することができます。
