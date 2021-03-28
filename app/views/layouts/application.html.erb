@@ -92,6 +92,11 @@
         </p>
       <% end %>
       <%= yield %>
+      <span id="back">
+        <a href="#">
+          <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false}, class: "arrow" %>
+        </a>
+      </span>
     </div>
 
     <footer class="bg-white pt-3 pb-3">
