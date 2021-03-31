@@ -1,0 +1,68 @@
+<div class="container">
+    <% if user_signed_in? %>
+      <a class="navbar-brand" href="/posts" style="font-size: 35px;"><strong class="header-logo">Dress<%= image_tag 'icon2.png', :size =>'30x30' %>Fun</strong></a>
+      <%= search_form_for @q, url: search_posts_path do |f| %>
+        <div class="row offset-md-4">
+          <div class="col-md-10">
+            <%= f.search_field :title_or_caption_or_color_cont, class: "form-control rounded-pill", placeholder: 'キーワードを入力してください' %>
+          </div>
+          <div class="col-md-2">
+            <%= f.submit "Search", class: "btn btn-success rounded-pill" %>
+          </div>
+        </div>
+      <% end %>
+      <ul class="navbar-nav nav justify-content-end">
+        <li class="nav-item mx-3">
+          <%= link_to new_post_path do %>
+            <i class="fas fa-plus-square btn" style="color: white; font-size: 35px;"></i>
+          <% end %>
+        </li>
+        <li class="nav-item mx-4 my-auto">
+          <%= link_to about_path do %>
+            <i class="fas fa-question-circle" style="color: white; font-size: 35px;"></i>
+          <% end %>
+        </li>
+        <li class="nav-item mx-3 mt-1">
+          <%= link_to user_path(current_user.id) do %>
+            <%= attachment_image_tag current_user,:user_image, :fill, 35, 35, format: 'jpeg', fallback: "user_icon.png", size: '35x35', class: "mt-1 rounded-circle" %>
+          <% end %>
+        </li>
+        <li class="nav-item dropdown my-auto">
+          <button class="btn btn-outline-secondary dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Hi, <%= current_user.nickname %> !!
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li>
+              <%= link_to user_path(current_user) do %>
+                <span class="dropdown-item">マイページ</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to favorite_posts_path do %>
+                <span class="dropdown-item">お気に入り</span>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    <% else %>
+      <a class="navbar-brand" href="/" style="font-size: 35px;"><strong class="header-logo">Dress<%= image_tag 'icon2.png', :size =>'30x30' %>Fun</strong></a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-3">
+          <%= link_to new_user_registration_path do %>
+            <i class="fas fa-user-plus btn" style="color: white; font-size: 35px;"></i>
+          <% end %>
+        </li>
+        <li class="nav-item mx-3">
+          <%= link_to new_user_session_path do %>
+            <i class="fas fa-sign-in-alt btn" style="color: white; font-size: 38px;"></i>
+          <% end %>
+        </li>
+        <li class="nav-item mx-4 my-auto">
+          <%= link_to about_path do %>
+            <i class="fas fa-question-circle" style="color: white; font-size: 35px;"></i>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
