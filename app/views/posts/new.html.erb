@@ -6,8 +6,9 @@
 
       <div class="my-3 col-md-8 offset-md-2">
         <strong><label>投稿画像<i class="far fa-images"></i></label></strong><br />
-        <p style="color : red;">(画像を複数アップロードする場合は、shift + クリックまたは ctrl + クリックで選択しアップロードしてください。)</p>
-        <%= f.attachment_field :post_images_images, multiple: true, direct: true, presigned: true %>
+        <p style="color : red;">(画像を複数アップロードする場合は、shift + クリックで選択しアップロードしてください。)</p>
+        <p>※画像容量が1MB以上だとうまく表示されない場合がございます</p>
+        <%= f.attachment_field :post_images_images, multiple: true %>
       </div>
 
       <div class="my-3 col-md-9 offset-md-2">
