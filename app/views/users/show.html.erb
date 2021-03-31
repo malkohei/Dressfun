@@ -12,7 +12,11 @@
     </div>
 
     <div class="col-md-10 py-4 mx-auto" style="border-bottom: solid lightgray;">
-      <p><%= @user.introduction %></p>
+      <% if @user.introduction.blank? %>
+        <p class="text-center"><strong>このユーザーの説明はありません。</strong></p>
+      <% else %>
+        <p><%= @user.introduction %></p>
+      <% end %>
     </div>
 
     <% if @user == current_user %>
