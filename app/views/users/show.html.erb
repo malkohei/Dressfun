@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="col-md-9 mt-5 mx-auto">
+    <div class="col-md-10 py-4 mx-auto" style="border-bottom: solid lightgray;">
       <p><%= @user.introduction %></p>
     </div>
 
@@ -23,6 +23,10 @@
       <%= link_to destroy_user_session_path, method: :delete, "data-confirm" => "このアカウントをログアウトしますか?", class:"text-white" do %>
         <button type="button" class="btn btn-danger col-md-5 offset-md-3 shadow"><i class="fas fa-sign-out-alt"></i></button>
       <% end %>
+    <% else %>
+      <div class="offset-md-5 mt-5">
+        <%= render "follow_form" %>
+      </div>
     <% end %>
   </div>
 </div>
