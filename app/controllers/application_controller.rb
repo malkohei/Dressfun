@@ -12,13 +12,13 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_q
-    @q = Post.ransack(params[:q])
-  end
+    def set_q
+      @q = Post.ransack(params[:q])
+    end
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :nickname, :sex])
-  end
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :nickname, :sex])
+    end
 end
