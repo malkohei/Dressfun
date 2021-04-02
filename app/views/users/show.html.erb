@@ -3,11 +3,26 @@
     <h2 class="text-center"><strong>ユーザー詳細<i class="fas fa-portrait" style="color: black; font-size: 30px;"></i></strong></h2>
 
     <div class="row">
-      <div class="col-md-4 offset-md-2 rounded-circle my-3">
+      <div class="col-md-2 offset-md-2 rounded-circle my-3 mx-auto">
         <%= attachment_image_tag @user,:user_image, :fill, 170, 170, format: 'jpeg', fallback: "user_icon2.png", size: '170x170', class: "shadow rounded-circle" %>
       </div>
-      <div class="my-4 col-md-4 mx-5">
-        <label class="text-center" style="font-size: 30px; text-decoration: underline;"><strong><%= @user.nickname %></strong></label>
+      <div class="mt-4 col-md-5 mx-auto text-center">
+        <label style="font-size: 30px; text-decoration: underline;"><strong><%= @user.nickname %></strong></label>
+        <p style="font-size: 20px;"><strong><%= @user.posts.count %></strong>投稿</p>
+        <div class="row mt-3">
+          <div class="col">
+            <%= link_to followers_user_path(@user.id) do %>
+              <span style="color: black; font-size: 18px;"><strong>フォロワー</strong></span>
+            <% end %>
+            <p><%= @user.followers.count %></p>
+          </div>
+          <div class="col">
+            <%= link_to following_user_path(@user.id) do %>
+              <span style="color: black; font-size: 18px;"><strong>フォロー</strong></span>
+            <% end %>
+            <p><%= @user.following.count %></p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -28,7 +43,7 @@
         <button type="button" class="btn btn-danger col-md-5 offset-md-3 shadow"><i class="fas fa-sign-out-alt"></i></button>
       <% end %>
     <% else %>
-      <div class="offset-md-5 mt-5">
+      <div class="mx-5 mt-5">
         <%= render "follow_form" %>
       </div>
     <% end %>

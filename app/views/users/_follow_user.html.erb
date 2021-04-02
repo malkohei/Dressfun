@@ -1,0 +1,25 @@
+<div class="col-md-10 rounded border shadow mx-auto p-3 my-3">
+  <div class="row">
+    <div class="col">
+      <%= link_to user_path(user.id) do %>
+        <%= attachment_image_tag user, :user_image, :fill, 50, 50, format: 'jpeg', fallback: "user_icon2.png", size: '50x50', class: "rounded-circle" %>
+      <% end %>
+    </div>
+    <div class="col my-auto">
+      <%= link_to user_path(user.id) do %>
+        <span style="font-size: 20px; color: black;"><strong><%= user.nickname %></strong></span>
+      <% end %>
+    </div>
+    <div class="col-auto my-auto">
+      <% if user == current_user %>
+        <%= link_to user_path(user) do %>
+          <button type="button" class="btn btn-outline-secondary rounded-pill">マイページ</button>
+        <% end %>
+      <% else %>
+        <%= link_to user_path(user) do %>
+          <button type="button" class="btn btn-outline-primary rounded-pill">ユーザーページ</button>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
