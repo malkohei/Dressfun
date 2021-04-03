@@ -34,3 +34,9 @@ $(function() {
     event.preventDefault();
   });
 });
+
+$(document).on('turbolinks:load', function() {
+  $('.background').fadeIn(function() {
+    $('.top').fadeIn(1000);
+  });
+});

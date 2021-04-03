@@ -46,7 +46,9 @@
         </li>
       </ul>
     <% else %>
-      <a class="navbar-brand" href="/" style="font-size: 35px;"><strong class="header-logo">Dress<%= image_tag 'icon2.png', :size =>'30x30' %>Fun</strong></a>
+      <%= link_to root_path do %>
+        <span class="navbar-brand" style="font-size: 35px;"><strong class="header-logo">Dress<%= image_tag 'icon2.png', :size =>'30x30' %>Fun</strong></span>
+      <% end %>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mx-3">
           <%= link_to new_user_registration_path do %>
