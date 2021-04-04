@@ -40,3 +40,9 @@ $(document).on('turbolinks:load', function() {
     $('.top').fadeIn(1000);
   });
 });
+
+$(document).on('turbolinks:load', function() {
+  $(`.nav-item`).on('click',function() {
+    $(this).slideUp('fast');
+  });
+});
