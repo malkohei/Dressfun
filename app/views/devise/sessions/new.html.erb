@@ -1,5 +1,5 @@
-<div class="row my-5">
-  <div class="col-md-4 bg-white rounded shadow p-3 my-5 pb-5 mx-auto">
+<div class="background" style="height: 560px">
+  <div class="sign-in rounded shadow">
     <h2 class="text-center my-3"><strong>ログインする<i class="fas fa-sign-in-alt " style="color: black; font-size: 30px;"></i></strong></h2>
       <%= render "devise/shared/error_messages", resource: resource %>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,7 +22,7 @@
       <p class="text-center">--新規登録がまだの方--</p>
 
       <%= link_to new_user_registration_path do %>
-        <button type="button" class="btn btn-outline-primary offset-md-2 col-md-8 mt-2">新規登録へ</button>
+        <button type="button" class="btn btn-outline-primary offset-md-2 col-md-8 my-4">新規登録へ</button>
       <% end %>
   </div>
 </div>

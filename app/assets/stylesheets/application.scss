@@ -33,7 +33,7 @@
   font-family: 'Pacifico', cursive;
 }
 
-.background {
+.home-background {
   display: none;
   background-image: image-url('background_image.jpg');
   background-color: rgba(255,255,255,0.3);
@@ -50,6 +50,44 @@
   width: 50%;
   padding-top: 10px;
   background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.background {
+  background-color: #eee;
+  width: 100%;
+  position: relative;
+  margin-top: 50px;
+}
+
+.sign-up {
+  display: none;
+  background-color: white;
+  height: auto;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.sign-in {
+  display: none;
+  background-color: white;
+  margin-top: 20px;
+  height: auto;
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.complete {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;

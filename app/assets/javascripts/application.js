@@ -36,13 +36,19 @@ $(function() {
 });
 
 $(document).on('turbolinks:load', function() {
-  $('.background').fadeIn(function() {
+  $('.home-background').fadeIn(function() {
     $('.top').fadeIn(1000);
   });
 });
 
 $(document).on('turbolinks:load', function() {
-  $(`.nav-item`).on('click',function() {
-    $(this).slideUp('fast');
-  });
+  $('.sign-up').fadeIn(1000);
+});
+
+$(document).on("turbolinks:load", function() {
+  $('.sign-in').fadeIn(2000);
+});
+
+$(function(){
+  $('.complete').slideDown('slow');
 });
