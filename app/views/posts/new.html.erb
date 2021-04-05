@@ -1,29 +1,29 @@
-<div class="row my-5">
+<div class="row my-5" style="background-color: #eee">
   <div class="col-md-6 mx-auto bg-white rounded shadow p-3 my-5 pb-5">
     <h2 class="text-center"><strong>新規投稿<i class="fas fa-pen-square" style="color: black;"></i></strong></h2>
     <br />
     <%= form_with model: @post, local: true do |f| %>
 
       <div class="my-3 col-md-8 offset-md-2">
-        <strong><label>投稿画像<i class="far fa-images"></i></label></strong><br />
+        <strong><label style="border-bottom: solid 1px">投稿画像<i class="far fa-images"></i></label></strong><br />
         <p style="color : red;">(画像を複数アップロードする場合は、shift + クリックで選択しアップロードしてください。)</p>
         <p>※画像容量が1MB以上だとうまく表示されない場合がございます</p>
         <%= f.attachment_field :post_images_images, multiple: true %>
       </div>
 
       <div class="my-3 col-md-9 offset-md-2">
-        <strong><label>投稿タイトル</label></strong><br />
+        <strong><label style="border-bottom: solid 1px;">投稿タイトル</label></strong><br />
         <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control", placeholder: "タイトルを入力してください" %>
       </div>
 
       <div class="my-3 col-md-9 offset-md-2">
-        <strong><label>投稿内容</label></strong><br />
+        <strong><label style="border-bottom: solid 1px;">投稿内容</label></strong><br />
         <p style="color: red;">※不適切な内容はお控えください</p>
         <%= f.text_area :caption, autofocus: true, autocomplete: "caption", class: "form-control", placeholder: "最大文字数は150文字です" %>
       </div>
 
       <div class="my-3 col-md-9 offset-md-2">
-        <label>使用されている色(主に使用されている色を記入してください)</label><br />
+        <label style="border-bottom: solid 1px;">使用されている色(主に使用されている色を記入してください)</label><br />
         <p>(例:赤、黒など)</p>
         <%= f.text_field :color, autofocus: true, autocomplete: "color", class: "form-control" %>
       </div>

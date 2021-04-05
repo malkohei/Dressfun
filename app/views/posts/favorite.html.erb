@@ -1,11 +1,9 @@
-<div class="container my-5">
-  <% if @favorites.present? %>
-    <% @favorites.each do |post| %><br />
-      <%= render 'posts/post', post: post %>
-    <% end %>
-  <% else %>
-    <div class="col-md-6 mx-auto bg-white rounded shadow p-3 pb-5" style="margin-top: 100px;">
-      <h4 class="text-center"><strong>お気に入り登録している投稿はありません</strong></h4>
-    </div>
+<% if @favorites.present? %>
+  <% @favorites.each do |post| %><br />
+    <%= render 'posts/post', post: post %>
   <% end %>
-</div>
+<% else %>
+  <div class="col-md-6 mx-auto bg-white rounded shadow p-3 pb-5" style="margin-top: 100px;">
+    <h4 class="text-center"><strong>お気に入り登録している投稿はありません</strong></h4>
+  </div>
+<% end %>

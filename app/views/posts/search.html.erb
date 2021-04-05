@@ -1,5 +1,3 @@
-<div class="container my-5">
-  <% @results.each do |post| %><br />
-    <%= render 'posts/post', post: post %>
-  <% end %>
-</div>
+<% @results.each do |post| %><br />
+  <%= render 'posts/post', post: post %>
+<% end %>
