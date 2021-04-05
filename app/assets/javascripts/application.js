@@ -52,3 +52,9 @@ $(document).on("turbolinks:load", function() {
 $(function(){
   $('.complete').slideDown('slow');
 });
+
+$(document).on('turbolinks:load', function() {
+  $('.search_text').fadeIn(1000, function() {
+    $('.search_form').fadeIn(1500);
+  });
+});

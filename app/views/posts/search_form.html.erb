@@ -1,0 +1,11 @@
+<div class="background" style="height: 600px">
+  <div class="search_text">
+    <p>お好きなアイテムをお探しください</p>
+  </div>
+  <div class="search_form">
+    <%= search_form_for @q, url: search_posts_path do |f| %>
+      <%= f.search_field :title_or_caption_or_color_cont, class: "form-control rounded-pill", placeholder: 'キーワードを入力してください' %>
+      <%= f.submit "Search", class: "col-md-2 offset-md-5 btn btn-success rounded-pill my-4" %>
+    <% end %>
+  </div>
+</div>

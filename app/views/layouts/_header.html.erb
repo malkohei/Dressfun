@@ -1,17 +1,12 @@
 <div class="container">
     <% if user_signed_in? %>
       <a class="navbar-brand" href="/posts" style="font-size: 35px;"><strong class="header-logo">Dress<%= image_tag 'icon2.png', :size =>'30x30' %>Fun</strong></a>
-      <%= search_form_for @q, url: search_posts_path do |f| %>
-        <div class="row offset-md-4">
-          <div class="col-md-10">
-            <%= f.search_field :title_or_caption_or_color_cont, class: "form-control rounded-pill", placeholder: 'キーワードを入力してください' %>
-          </div>
-          <div class="col-md-2">
-            <%= f.submit "Search", class: "btn btn-success rounded-pill" %>
-          </div>
-        </div>
-      <% end %>
       <ul class="navbar-nav nav justify-content-end">
+        <li class="nav-item mx-4 my-auto">
+          <%= link_to search_form_posts_path do %>
+            <i class="fas fa-search" style="color: white; font-size: 35px;"></i>
+          <% end %>
+        </li>
         <li class="nav-item mx-3">
           <%= link_to new_post_path do %>
             <i class="fas fa-plus-square btn" style="color: white; font-size: 35px;"></i>
