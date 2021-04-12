@@ -29,6 +29,8 @@
   - コメント投稿
   - 検索機能
 
+レイアウト全体にjQueryで動きをつけていく予定です。(修行中)
+
 ### [機能詳細](https://docs.google.com/spreadsheets/d/1kk8M1Tv40J5m6eEJwI_PrQa0MZh3TbopRY_VRdUwuN4/edit#gid=0)
 # 開発環境
 
