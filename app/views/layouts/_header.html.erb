@@ -37,6 +37,16 @@
                 <span class="dropdown-item">お気に入り</span>
               <% end %>
             </li>
+            <li>
+              <%= link_to following_user_path(current_user) do %>
+                <span class="dropdown-item">フォロー</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to followers_user_path(current_user) do %>
+                <span class="dropdown-item">フォロワー</span>
+              <% end %>
+            </li>
           </ul>
         </li>
       </ul>
