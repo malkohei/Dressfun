@@ -58,3 +58,7 @@ $(document).on('turbolinks:load', function() {
     $('.search_form').fadeIn(1500);
   });
 });
+
+$(document).on('turbolinks:load', function() {
+  $('.user-page').fadeIn(1000);
+});
